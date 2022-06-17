@@ -30,6 +30,11 @@ async function main() {
   txn = await nftContract.makeAnEpicNFT();
   // Wait for it to be mined.
   await txn.wait();
+
+  txn = await nftContract.getTotalNFTsMintedSoFar();
+
+
+  console.log("Total NFTs minted so far:", txn.toNumber());
 }
 
 main()
